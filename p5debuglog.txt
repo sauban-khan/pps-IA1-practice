@@ -1,5 +1,5 @@
-gcc -g p5original.c
-g gdb a.out
+ gcc -g p5final.c
+ gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -16,25 +16,23 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) break main
-Breakpoint 1 at 0x81d: file p8original.c, line 31.
+Breakpoint 1 at 0x81d: file p5final.c, line 31.
 (gdb) r
-Starting program: /home/runner/pps-test1-sauban-khan-22/a.out 
+Starting program: /home/runner/pps-IA1-practice-15/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p8original.c:31
+Breakpoint 1, main () at p5final.c:31
 31    n = input();
 (gdb) n
-Enter a number to find the sqaure root of: 81
+Enter a number to find the sqaure root of: 16
 32    sres = squareroot(n);
 (gdb) n
 33    output(n, sres);
 (gdb) n
-Square root of given input 81.00 is = 9.00 
+Square root of given input 16.00 is = 4.00 
 34    return 0;
 (gdb) n
-35  } (gdb) n
-__libc_start_main (main=0x557a03000815 <main>, argc=1, argv=0x7fff9034e448, 
-    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
-    stack_end=0x7fff9034e438) at ../csu/libc-start.c:344
-344 ../csu/libc-start.c: No such file or directory.
-(gdb) Quit
+35  } (gdb) c
+Continuing.
+[Inferior 1 (process 842) exited normally]
+(gdb) 
