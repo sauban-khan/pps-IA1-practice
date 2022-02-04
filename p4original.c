@@ -1,42 +1,48 @@
 #include<stdio.h>
-int input()
+int input_array_size()
 {
-  int a;
-  printf("Enter a number: ");
-  scanf("%d",&a);
-  return a;
+  int n;
+  printf("Enter length of array: ");
+  scanf("%d", &n);
+  return n;
 }
 
-int cmp(int a, int b, int c)
+void input_array(int n, int a[n])
 {
-  if((a>b)&&(a>c))
+  for(int i=0; i<n; i++)
   {
-    return a;
-  }
-  else if(b>c)
-  {
-    return b;
-  }
-  else
-  {
-    return c;
+    printf("Enter a number to input: ");
+    scanf("%d", &a[i]);
   }
 }
 
-
-void output(int l)
+int sum_n_arrays(int n, int a[n])
 {
-  printf("The largest number in the given input is: %d\n", l);
+  int sum=0;
+  for(int i=0; i<n; i++)
+  {
+    sum += a[i];
+  }
+  return sum;
+}
+
+void output(int n, int a[n], int sum)
+{
+  for(int i=0; i<n-1; i++)
+  {
+    printf("%d+", a[i]);
+  }
+  printf("%d is %d\n", a[n-1], sum);
 }
 
 int main()
 {
   printf("Start Of The Program:\n");
-  int a, b, c, l;
-  a = input();
-  b = input();
-  c = input();
-  l = cmp(a, b, c);
-  output(l);
+  int n, sum;
+  n = input_array_size();
+  int a[n];
+  input_array(n, a);
+  sum = sum_n_arrays(n, a);
+  output(n, a, sum);
   return 0;
 }
