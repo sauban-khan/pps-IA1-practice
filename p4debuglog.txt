@@ -16,32 +16,35 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) break main
-Breakpoint 1 at 0x823: file p4original.c, line 34.
+Breakpoint 1 at 0x8fb: file p7original.c, line 39.
 (gdb) r
-Starting program: /home/runner/pps-IA1-practice-7/a.out 
+Starting program: /home/runner/pps-test1-sauban-khan-35/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p4original.c:34
-34    printf("Start Of The Program:\n");
+Breakpoint 1, main () at p7original.c:39
+39  {
+(gdb) n
+40    printf("Start Of The Program:\n");
 (gdb) n
 Start Of The Program:
-36    a = input();
+42    n = input_array_size();
 (gdb) n
-Enter a number: 3
-37    b = input();
+Enter length of array: 2
+43    int a[n];
 (gdb) n
-Enter a number: 4
-38    c = input();
+44    input_array(n, a);
 (gdb) n
-Enter a number: 5
-39    l = cmp(a, b, c);
+Enter a number to input: 4
+Enter a number to input: 5
+45    sum = sum_n_arrays(n, a);
 (gdb) n
-40    output(l);
+46    output(n, a, sum);
 (gdb) n
-The largest number in the given input is: 5
-41    return 0;
+4+5 is 9
+47    return 0;
 (gdb) n
-(gdb) c
+48  }(gdb) c
 Continuing.
-[Inferior 1 (process 106) exited normally]
+[Inferior 1 (process 94) exited normally]
+(gdb) Quit
 (gdb) 
