@@ -1,5 +1,5 @@
 gcc -g p7original.c
- gdb a.out 
+ gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -16,35 +16,31 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) break main
-Breakpoint 1 at 0x8fb: file p7original.c, line 39.
+Breakpoint 1 at 0x856: file p10original.c, line 38.
 (gdb) r
-Starting program: /home/runner/pps-IA1-practice-10/a.out 
+Starting program: /home/runner/pps-test1-sauban-khan-26/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p7original.c:39
-39  {
+Breakpoint 1, main () at p10original.c:38
+38      c1 = input();
 (gdb) n
-40    printf("Start Of The Program:\n");
+Enter the Real part: 3
+Enter the Imaginary part: 6
+39      c2 = input();
 (gdb) n
-Start Of The Program:
-42    n = input_array_size();
+Enter the Real part: 4
+Enter the Imaginary part: 2
+40      sum = add(c1, c2);
 (gdb) n
-Enter length of array: 3
-43    int a[n];
+41      output(c1, c2, sum);
 (gdb) n
-44    input_array(n, a);
+The sum of 3.0 + 6.0i and 4.0 + 2.0i is 7.0 + 8.0i
+42      return 0;
 (gdb) n
-Enter a number to input: 4
-Enter a number to input: 5
-Enter a number to input: 2
-45    sum = sum_n_arrays(n, a);
+43  }
 (gdb) n
-46    output(n, a, sum);
-(gdb) n
-4+5+2 is 11
-47    return 0;
-(gdb) n
-48  }(gdb) c
-Continuing.
-[Inferior 1 (process 95) exited normally]
+__libc_start_main (main=0x55d1af20084e <main>, argc=1, argv=0x7ffc935b3ee8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffc935b3ed8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
 (gdb) 
