@@ -1,4 +1,4 @@
-gcc -g p3original.c
+ gcc -g p3final.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -16,22 +16,25 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) break main
-Breakpoint 1 at 0x84e: file p6original.c, line 32.
+Breakpoint 1 at 0x84e: file p3final.c, line 32.
 (gdb) r
-Starting program: /home/runner/pps-test1-sauban-khan-20/a.out 
+Starting program: /home/runner/pps-IA1-practice-15/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p6original.c:32
+Breakpoint 1, main () at p3final.c:32
 32      printf("Start Of The Program:\n");
 (gdb) n
 Start Of The Program:
 33      int n = input();
 (gdb) n
-Enter the numbers: 2
+Enter the numbers: 6
 34      int sum = sum_n(n);
 (gdb) n
 35      output(n, sum);
 (gdb) n
-1+2 is 3
+1+2+3+4+5+6 is 21
 36      return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 546) exited normally]
 (gdb) 
