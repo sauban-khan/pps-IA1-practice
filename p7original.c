@@ -1,48 +1,43 @@
-
-int input_array_size()
+#include<stdio.h>
+typedef struct complex
 {
-  int n;
-  printf("Enter length of array: ");
-  scanf("%d", &n);
-  return n;
+    float real;
+    float imaginary;
+} complex;
+
+complex add(complex n1, complex n2);
+
+complex input()
+{
+    complex c;
+    printf("Enter the Real part: ");
+    scanf("%f", &c.real);
+    printf("Enter the Imaginary part: ");
+    scanf("%f", &c.imaginary);
+    return c;
 }
 
-void input_array(int n, int a[n])
+complex add(complex a, complex b)
 {
-  for(int i=0; i<n; i++)
-  {
-    printf("Enter a number to input: ");
-    scanf("%d", &a[i]);
-  }
+    complex sum;
+    sum.real = a.real + b.real;
+    sum.imaginary = a.imaginary + b.imaginary;
+    return sum;
 }
 
-int sum_n_arrays(int n, int a[n])
+void output(complex a, complex b, complex sum)
 {
-  int sum=0;
-  for(int i=0; i<n; i++)
-  {
-    sum += a[i];
-  }
-  return sum;
+    printf("The sum of %0.1f + %0.1fi and %0.1f + %0.1fi is %0.1f + %0.1fi\n", a.real, a.imaginary, b.real, b.imaginary, sum.real, sum.imaginary);
 }
 
-void output(int n, int a[n], int sum)
-{
-  for(int i=0; i<n-1; i++)
-  {
-    printf("%d+", a[i]);
-  }
-  printf("%d is %d\n", a[n-1], sum);
-}
+
 
 int main()
 {
-  printf("Start Of The Program:\n");
-  int n, sum;
-  n = input_array_size();
-  int a[n];
-  input_array(n, a);
-  sum = sum_n_arrays(n, a);
-  output(n, a, sum);
-  return 0;
+    complex c1, c2, sum;
+    c1 = input();
+    c2 = input();
+    sum = add(c1, c2);
+    output(c1, c2, sum);
+    return 0;
 }
