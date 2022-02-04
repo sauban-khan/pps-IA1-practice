@@ -16,22 +16,48 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) break main
-Breakpoint 1 at 0x81d: file p8original.c, line 31.
+Breakpoint 1 at 0xa1f: file p11original.c, line 49.
 (gdb) r
-Starting program: /home/runner/pps-IA1-practice-11/a.out 
+Starting program: /home/runner/pps-test1-sauban-khan-27/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p8original.c:31
-31    n = input();
+Breakpoint 1, main () at p11original.c:49
+49  {
 (gdb) n
-Enter a number to find the sqaure root of: 36
-32    sres = squareroot(n);
+50    printf("Start Of The Program:\n");
 (gdb) n
-33    output(n, sres);
+Start Of The Program:
+51    int n = get_n();
 (gdb) n
-Square root of given input 36.00 is = 6.00 
-34    return 0;
+Enter the number of complex numbers: 5
+52    Complex c[n], res;
+(gdb) n
+53    input_n_complex(n, c);
+(gdb) n
+Enter the real part: 3
+Enter the imaginary part: 8
+Enter the real part: 4
+Enter the imaginary part: 6
+Enter the real part: 9
+Enter the imaginary part: 7
+Enter the real part: 2
+Enter the imaginary part: 5
+Enter the real part: 1 
+Enter the imaginary part: 10
+54    res = add_n_complex(n, c);
+(gdb) n
+55    output(n, c, res);
+(gdb) n
+3.00 + 8.00i
+4.00 + 6.00i
+9.00 + 7.00i
+2.00 + 5.00i
++ 1.00 + 10.00i is
+19.00 + 36.00i
+56    return 0;
+(gdb) n
+57  }
 (gdb) c
 Continuing.
-[Inferior 1 (process 95) exited normally]
+[Inferior 1 (process 99) exited normally]
 (gdb) 
