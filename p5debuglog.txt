@@ -1,5 +1,5 @@
 gcc -g p5original.c
- gdb a.out
+g gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -16,29 +16,25 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) break main
-Breakpoint 1 at 0x85c: file p5original.c, line 34.
+Breakpoint 1 at 0x81d: file p8original.c, line 31.
 (gdb) r
-Starting program: /home/runner/pps-IA1-practice-8/a.out 
+Starting program: /home/runner/pps-test1-sauban-khan-22/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p5original.c:34
-34  {
+Breakpoint 1, main () at p8original.c:31
+31    n = input();
 (gdb) n
-35    printf("Start Of The Program:\n");
+Enter a number to find the sqaure root of: 81
+32    sres = squareroot(n);
 (gdb) n
-Start Of The Program:
-37    input(&a, &b, &c);
+33    output(n, sres);
 (gdb) n
-Enter the first number: 6
-Enter the second number: 3
-Enter the third number: 8
-38    largest=cmp(a, b, c);
+Square root of given input 81.00 is = 9.00 
+34    return 0;
 (gdb) n
-39    output(largest);
-(gdb) n
-The largest number out of all inputs is: 8
-40    return 0;
-(gdb) c
-Continuing.
-[Inferior 1 (process 95) exited normally]
-(gdb) 
+35  } (gdb) n
+__libc_start_main (main=0x557a03000815 <main>, argc=1, argv=0x7fff9034e448, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fff9034e438) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) Quit
