@@ -1,4 +1,4 @@
-gcc -g p2original.c
+gcc -g p5original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -16,29 +16,32 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) break main
-Breakpoint 1 at 0x814: file p2original.c, line 22.
+Breakpoint 1 at 0x85c: file p5original.c, line 34.
 (gdb) r
-Starting program: /home/runner/pps-IA1-practice-3/a.out 
+Starting program: /home/runner/pps-test1-sauban-khan-17/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p2original.c:22
-22    printf("Start Of The Program\n ");
+Breakpoint 1, main () at p5original.c:34
+34  {
 (gdb) n
-Start Of The Program
-24    n1=input();
+35    printf("Start Of The Program:\n");
 (gdb) n
- Enter the number
-5
-25    n2=input();
+Start Of The Program:
+37    input(&a, &b, &c);
 (gdb) n
-Enter the number
-6
-26    h=add(n1,n2);
+Enter the first number: 20
+Enter the second number: 10
+Enter the third number: 30
+38    largest=cmp(a, b, c);
 (gdb) n
-27    output(n1,n2,h);
+39    output(largest);
 (gdb) n
-Sum of the two numbers 5 and 6 is = 11
-28  }(gdb) c
-Continuing.
-[Inferior 1 (process 95) exited normally]
+The largest number out of all inputs is: 30
+40    return 0;
+(gdb) n
+41  }(gdb) n
+__libc_start_main (main=0x55eb10c00854 <main>, argc=1, argv=0x7ffde68ad0e8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffde68ad0d8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
 (gdb) 
