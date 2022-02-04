@@ -1,41 +1,35 @@
 #include<stdio.h>
 
-void input(int *a, int *b, int *c)
+float input()
 {
-  printf("Enter the first number: ");
-  scanf("%d", a);
-  printf("Enter the second number: ");
-  scanf("%d", b);
-  printf("Enter the third number: ");
-  scanf("%d", c);
+  float n;
+  printf("Enter a number to find the sqaure root of: ");
+  scanf("%f", &n);
+  return n;
 }
 
-int cmp(int a, int b, int c)
+float squareroot(float n)
 {
-  if((a>=b)&&(a>=c))
+  float x = n;
+  float y = 1;
+  float e = 0.000001;
+  while (x - y > e)
   {
-    return a;
+    x  = (x + y) / 2;
+    y = n / x; 
   }
-  else if(b>=c)
-  {
-    return b;
-  }
-  else(c>=a);
-  {
-    return c;
-  }
+  return x;
 }
-void output(int largest)
+void output(float n, float sres)
 {
-  printf("The largest number out of all inputs is: %d\n", largest);
+  printf("Square root of given input %0.2f is = %0.2f \n", n, sres);
 }
 
 int main()
 {
-  printf("Start Of The Program:\n");
-  int a, b ,c, largest;
-  input(&a, &b, &c);
-  largest=cmp(a, b, c);
-  output(largest);
+  float n, sres;
+  n = input();
+  sres = squareroot(n);
+  output(n, sres);
   return 0;
-}
+} 
