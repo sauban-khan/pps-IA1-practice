@@ -1,4 +1,4 @@
-gcc -g p4original.c
+ gcc -g p4final.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -16,12 +16,12 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) break main
-Breakpoint 1 at 0x8fb: file p7original.c, line 39.
+Breakpoint 1 at 0x8fb: file p4final.c, line 39.
 (gdb) r
-Starting program: /home/runner/pps-test1-sauban-khan-35/a.out 
+Starting program: /home/runner/pps-IA1-practice-15/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p7original.c:39
+Breakpoint 1, main () at p4final.c:39
 39  {
 (gdb) n
 40    printf("Start Of The Program:\n");
@@ -29,22 +29,21 @@ Breakpoint 1, main () at p7original.c:39
 Start Of The Program:
 42    n = input_array_size();
 (gdb) n
-Enter length of array: 2
+Enter length of array: 3
 43    int a[n];
 (gdb) n
 44    input_array(n, a);
 (gdb) n
+Enter a number to input: 3
 Enter a number to input: 4
-Enter a number to input: 5
+Enter a number to input: 6
 45    sum = sum_n_arrays(n, a);
 (gdb) n
 46    output(n, a, sum);
 (gdb) n
-4+5 is 9
+3+4+6 is 13
 47    return 0;
-(gdb) n
-48  }(gdb) c
+(gdb) c
 Continuing.
-[Inferior 1 (process 94) exited normally]
-(gdb) Quit
+[Inferior 1 (process 676) exited normally]
 (gdb) 
